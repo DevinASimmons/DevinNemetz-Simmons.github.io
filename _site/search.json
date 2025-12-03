@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Nemetz-Simmons Directory",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about_Nemetz.html",
+    "href": "about_Nemetz.html",
+    "title": "About",
+    "section": "",
+    "text": "Devin Alexander Nemetz-Simmons"
+  },
+  {
+    "objectID": "Resume_Nemetz-Simmons.html",
+    "href": "Resume_Nemetz-Simmons.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Education:\nGraduated from The University of Arizona with a Bachelor of Arts in History. Attended 2021-2025\nThe University of Texas at Dallas Attended 2025-continuing\nSet to attend Field Artillery Basic Officer Leaders Course at Fort Sill, Oklahoma in March 2026.\nWork Experience: Texas Army National Guard, serving as a Second Lieutenant as a Field Artillery officer. Currently with C BaTT, 1-133rd Field Artillery Regiment. Currently in Command of 56 men and 2 M777A2 Howitzers"
+  },
+  {
+    "objectID": "assign01.html",
+    "href": "assign01.html",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "Using Rscript progam has been extremely difficult. I have used a variety of Chatgpt as well as other people to solve the issues. Nothing has seen to be working. I do not know if it is a problem with my computer of the program that is on my computer. I have attempted to restart the program multiple times from scratch to no avail."
+  },
+  {
+    "objectID": "assign01.html#assignment-1",
+    "href": "assign01.html#assignment-1",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "Using Rscript progam has been extremely difficult. I have used a variety of Chatgpt as well as other people to solve the issues. Nothing has seen to be working. I do not know if it is a problem with my computer of the program that is on my computer. I have attempted to restart the program multiple times from scratch to no avail."
+  },
+  {
+    "objectID": "assign04.html",
+    "href": "assign04.html",
+    "title": "Assignment 4",
+    "section": "",
+    "text": "#Load packages\nlibrary(tidyverse)\n\nWarning: package 'tidyverse' was built under R version 4.5.2\n\n\nWarning: package 'lubridate' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.1\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rvest)\n\n\nAttaching package: 'rvest'\n\nThe following object is masked from 'package:readr':\n\n    guess_encoding\n\n#Import dataset\nfores &lt;- read_csv(\"Data/newfores.csv\", col_types = cols(NA...7 = col_skip(), \n    NA...8 = col_skip(), newdate = col_skip()))\n\nWarning: The following named parsers don't match the column names: NA...7,\nNA...8, newdate\n\nView(fores)\nforeign_reserves_data &lt;- read_csv(\"Data/foreign_reserves_data.csv\", \n    col_types = cols(Other_Currencies = col_skip(), \n        Unallocated_Reserves = col_skip(), \n        `NA` = col_skip()))\nView(foreign_reserves_data)\n\n#Top 5 rows for each data frame\nhead(fores, 5)\n\n# A tibble: 5 × 14\n   Year Quarter USD   Euro  JPY   GBP   CAN   CNY   AUD   CHF   Other_Currencies\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;           \n1    NA &lt;NA&gt;    USD   EUR   JPY   GBP   CAD   CNY   AUD   CHF   Othercurrencies \n2  2019 Q1      6,72… 2,20… 584.… 495.… 208.… 212.… 181.… 15.27 263.50          \n3  2019 Q2      6,75… 2,26… 611.… 497.… 209.… 212.… 186.… 15.53 270.56          \n4  2019 Q3      6,72… 2,21… 612.… 492.… 205.… 213.… 182.… 16.20 262.92          \n5  2019 Q4      6,67… 2,27… 631.… 511.… 206.… 215.… 187.… 17.36 281.50          \n# ℹ 3 more variables: Unallocated_Reserves &lt;chr&gt;, Total &lt;chr&gt;, `NA` &lt;lgl&gt;\n\nhead(foreign_reserves_data, 5)\n\n# A tibble: 5 × 11\n   Year Quarter USD      Euro     JPY    GBP    CAN    CNY    AUD    CHF   Total\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;\n1    NA &lt;NA&gt;    USD      EUR      JPY    GBP    CAD    CNY    AUD    CHF   Total\n2  2019 Q1      6,727.09 2,208.79 584.63 495.70 208.64 212.26 181.95 15.27 11,6…\n3  2019 Q2      6,752.28 2,264.88 611.87 497.41 209.85 212.80 186.71 15.53 11,7…\n4  2019 Q3      6,728.85 2,212.74 612.75 492.22 205.44 213.83 182.48 16.20 11,6…\n5  2019 Q4      6,674.83 2,279.30 631.00 511.51 206.71 215.81 187.18 17.36 11,8…"
+  }
+]
